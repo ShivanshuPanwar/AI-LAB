@@ -1,1 +1,70 @@
+print("\t\t\t\t\tStart Game!")
+M1 = 3
+C1 = 3
+M2 = 0
+C2 = 0
+print("Rule 1: 1 missionary is sailing boat from Bank1 to Bank 2\n")
+print("Rule 2: 2 missionary are sailing boat from Bank 1 to Bank 2\n")
+print("Rule 3: One missionary and one cannnibal are sailing boat from Bank 1 to Bank 2\n")
+print("Rule 4: One Cannibal is sailing boat from Bank 1 to Bank 2\n")
+print("Rule 5: Two Cannibale are sailing boat from Bank 1 to Bank 2\n")
+print("Rule 6: One Missionary is sailing boat from from Bank 2 to Bank 1\n")
+print("Rule 7: Two misionary are selling boat from Bank 2 to Bank 1\n")
+print("Rule 8: One missionary and one cannibal are sailing boat from Bank 2 to Bank 1\n")
+print("Rule 9: One cannibal is sailing boat from Bank 2 to Bank 1\n")
+print("Rule 10: Two cannibal are sailing boat from Bank 2 to Bank 1\n")
 
+while((C2 != 3) or (M2 != 3)):
+  rno = int(input("Enter the rule number: "))
+  if(rno == 1):
+        M1=M1-1
+        M2=M2+1
+        
+  elif(rno == 2):
+      M1=M1-2
+      M2=M2+2
+        
+  elif(rno == 3):
+      M1=M1-1
+      C1=C1-1
+      M2=M2+1
+      C2=C2+1
+        
+  elif(rno == 4):
+      C1=C1-1
+      C2=C2+1
+        
+  elif(rno == 5):
+      C1=C1-2
+      C2=C2+2
+        
+  elif(rno == 6):
+      M2=M2-1
+      M1=M1+1
+        
+  elif(rno == 7):
+      M2=M2-2
+      M1=M1+2
+        
+  elif(rno == 8):
+      M2=M2-1
+      C2=C2-1
+      M1=M1+1
+      C1=C1+1
+        
+  elif(rno == 9):
+      C2=C2-1
+      C1=C1+1
+        
+  elif(rno == 10):
+      C2=C2-2
+      C1=C1+2
+  print(M1, C1)
+  print(M2, C2)
+
+  if((M1>0 and M1<C1) or (M2>0 and M2<C2)):
+      print("dead")
+      break
+  if((M1==0 and C1 == 0) or (M2==3 and C2==3)):
+      print("You Won")
+      break
